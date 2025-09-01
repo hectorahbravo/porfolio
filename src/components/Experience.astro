@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+const EXPERIENCE = [
+    {
+        date: "Actualmente",
+        title: "Repartidor Amazon",
+        company: "Guinea Logistic",
+        description: "Reparto de paqueteria de Amazon en furgoneta",
+    },
+    {
+        date: "Abril 2024",
+        title: "Desarrollador web",
+        company: "Ironhack",
+        description:
+            "En 2024 trabajé como desarrollador web y de aplicaciones en un entorno colaborativo, gestionando proyectos con distintas tecnologías junto a un equipo multidisciplinario. Creamos páginas web con funcionalidades como perfiles de usuario y autenticación, implementamos bases de datos NoSQL, consumimos APIs externas para el manejo de datos y aplicamos diseño responsive para todo tipo de dispositivos. Al finalizar cada proyecto, realizábamos reuniones retrospectivas para evaluar el proceso y seguir mejorando como equipo.",
+    },
+    {
+        date: "Septiembre 2023",
+        title: "Repartidor Autonomo",
+        company: "Glovo",
+        description: "Reparto de comida a domicilio en moto",
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>

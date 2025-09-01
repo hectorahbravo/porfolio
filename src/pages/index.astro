@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedinIcon from "../icons/LinkedinIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import MailIcon from "../icons/MailIcon.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience.astro";
+import Briefcase from "../icons/Briefcase.astro";
+import CodeIcon from "../icons/CodeIcon.astro";
+import Projects from "../components/Projects.astro";
+import AboutIcon from "../icons/AboutIcon.astro";
+import About from "../components/About.astro";
+---
+
+<Layout>
+	<main class="px-8 m-auto max-w-[1024px]">
+		<SectionContainer id="" class="pt-20">
+			<div class="flex justify-center items-center gap-x-5">
+				<h1
+					class="text-[#f9f16f] text-3xl md:text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 lg:pb-4 whitespace-nowrap"
+				>
+					Hector Alonso <br />Hernandez Bravo
+				</h1>
+				<img
+					class="rounded-full size-20 my-2 border-2 border-[#f9f16f]"
+					src="/public/ProfileImage.webp"
+					alt="profile"
+				/>
+				<span class="shine-text">#Opentowork</span>
+			</div>
+
+			<h2 class="text-xl lg:text-2xl text-pretty pt-5">
+				<span> 2 años de experiencia.</span>
+				<span class="text-yellow-200/90 font-semibold"
+					>Desarrollador web Full Stack e Ingeniero Industrial</span
+				> de
+				<span class="text-red-200/90"> Madrid, España.</span> Especializado
+				en crear aplicaciones unicas. Soy Full Stack Web Developer con experiencia
+				en tecnologías como HTML, CSS, Tailwind, JavaScript, React, Express.js,
+				Node.js y MongoDB. Me considero una persona proactiva, dispuesta
+				a asumir nuevos retos y comprometida plenamente con mis responsabilidades.
+				Siempre busco ampliar mis habilidades y seguir creciendo profesionalmente.
+			</h2>
+
+			<ul>
+				<nav class="flex gap-4 mt-4 flex-wrap">
+					<SocialPill
+						href="https://www.linkedin.com/in/hectorahbravo/"
+					>
+						<LinkedinIcon class="size-4 md:size-6" />
+						Linkedin
+					</SocialPill>
+					<SocialPill href="https://github.com/hectorahbravo">
+						<GithubIcon class="size-4 md:size-6" />
+						Github
+					</SocialPill>
+					<SocialPill href="https://github.com/hectorahbravo">
+						<MailIcon class="size-4 md:size-6" />
+						hectorahbravo@gmail.com
+					</SocialPill>
+				</nav>
+			</ul></SectionContainer
+		>
+		<SectionContainer id="experience" class="pt-15">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-7" />Experiencia laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="projects">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-7" />Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="about">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<AboutIcon class="size-7" />Sobre Mi
+			</h2>
+			<About />
+		</SectionContainer>
+	</main>
+</Layout>

@@ -1,0 +1,84 @@
+<style>
+    .navbar {
+        transition: transform 0.5s ease;
+    }
+    .navbar.hide {
+        transform: translateY(-150%);
+    }
+</style>
+
+<header
+    id="navbar"
+    class="navbar fixed top-0 z-50 flex items-center justify-center w-full mx-auto mt-2 whitespace-nowrap pt-5"
+>
+    <span></span>
+
+    <nav
+        class="flex px-3 text-sm font-medium rounded-full text-[#1f2d40] bg-[#f9f16f] justify-center items-center border border-[#1f2d40]"
+    >
+        <a
+            class="relative block px-2 py-2 transition hover:opacity-50"
+            href="#about">Sobre mi</a
+        >
+        <a
+            class="relative block px-2 py-2 transition hover:opacity-50"
+            href="#experience">Experiencia</a
+        >
+        <a
+            class="relative block px-2 py-2 transition hover:opacity-50"
+            href="#projects">Proyectos</a
+        >
+        <a
+            class="relative block px-2 py-2 transition hover:opacity-75 dark:hover:text-yellow-200"
+            href="#contact">Contacto</a
+        >
+    </nav>
+</header>
+
+<script is:inline>
+    const navbar = document.getElementById("navbar");
+    let lastScroll = 0;
+    let showByMouse = false;
+    let hideTimeout = null;
+
+    function showNavbar() {
+        navbar.classList.remove("hide");
+    }
+
+    function hideNavbar() {
+        navbar.classList.add("hide");
+    }
+
+    // Detectar scroll
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.scrollY;
+
+        if (currentScroll < 150 || showByMouse) {
+            showNavbar();
+        } else if (currentScroll > lastScroll) {
+            hideNavbar();
+        } else {
+            showNavbar();
+        }
+
+        lastScroll = currentScroll;
+    });
+
+    window.addEventListener("mousemove", (e) => {
+        if (e.clientY < 80) {
+            showByMouse = true;
+            clearTimeout(hideTimeout);
+            showNavbar();
+        } else {
+            if (showByMouse) {
+                showByMouse = false;
+                hideTimeout = setTimeout(() => {
+                    const currentScroll = window.scrollY;
+                    if (currentScroll > 150) {
+                        hideNavbar();
+                    }
+                }, 1500);
+            }
+        }
+    });
+</script>
