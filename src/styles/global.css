@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 .shine-text {
-    position: relative;
-    display: inline-block;
+    font-size: 0.75rem;
+    /* ajusta según necesites */
+    letter-spacing: 2px;
+    font-weight: bold;
+
     background: linear-gradient(120deg,
             #f9f16f 0%,
             #ffffff 20%,
